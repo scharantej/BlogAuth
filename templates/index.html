@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>LLM Trends</title>
+</head>
+<body>
+<h1>LLM Trends</h1>
+<form action="{{ url_for('login') }}" method="POST">
+<label for="username">Username</label>
+<input type="text" name="username">
+<br>
+<label for="password">Password</label>
+<input type="password" name="password">
+<br>
+<input type="submit" value="Login">
+</form>
+<br>
+<h2>Recent Blog Posts</h2>
+<ul>
+{% for post in posts %}
+<li><a href="{{ url_for('blog_details', blog_id=post.id) }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+</body>
+</html>
+
+
+---
